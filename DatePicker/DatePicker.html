@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<script>
+  class MyCustomTag extends HTMLELement {
+    connectedCallback() {
+      this.innerHTML = '<h2>My custom element</h2><button>click me</button>';
+      this.style.backgroundColor = 'blue';
+      this.style.padding = '20px';
+      this.style.display = 'inline-block';
+      this.style.color = 'white';
+    }
+  }
+  if (!customElements.get('my-custom-tag')) {
+    customElements.define('my-custom-tag', MyCustomTag);
+  }
+</script>
+
+<style>
+  my-custom-tag {
+    background-color: blue;
+    padding: 20px;
+    display: inline-block;
+    color: white;
+  }
+</style>
+
+<input type="date" step="2" />
+
+<div pseudo="-webkit-datetime-edit" id="date-time-edit" datetimeformat="M/d/yy">
+  <div pseudo="-webkit-datetime-edit-fields-wrapper">
+    <span
+      role="spinbutton"
+      aria-valuetext="mm"
+      aria-valuemin="1"
+      aria-valuemax="12"
+      aria-help="Month"
+      pseudo="-webkit-datetime-edit-month-field"
+      >mm</span
+    >
+    <div pseudo="-webkit-datetime-edit-text">/</div>
+    <span
+      role="spinbutton"
+      aria-valuetext="dd"
+      aria-valuemin="1"
+      aria-valuemin="31"
+      aria-help="Day"
+      pseudo="-webkit-datetime-edit-day-field"
+      >dd</span
+    >
+    <div pseudo="-webkit-datetime-edit-text">/</div>
+    <span
+      role="spinbutton"
+      aria-valuetext="yyyy"
+      aria-valuemin="1"
+      aria-valuemax="275760"
+      aria-help="Year"
+      pseudo="-webkit-datetime-edit-year-field"
+      >yyyy</span
+    >
+  </div>
+</div>
+<div
+  pseudo="-webkit-clear-button"
+  id="clear"
+  style="opacity:0; pointer-events:none;"
+></div>
+<div pseudo="-webkit-inner-spin-button" id="spin"></div>
+<div pseudo="-webkit-calendar-picker-indicator" id="picker"></div>
+<body>
+  <my-custom-tag onclick="alert('clicked')"></my-custom-tag>
+</body>
+this.innerHTML = ‘
+<h2>My custom element</h2>
+<button>click me</button>’;
